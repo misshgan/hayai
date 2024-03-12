@@ -35,6 +35,8 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import 'default/_errors';
 
 /* Theme components */
+@import 'components/_navigation.css';
+@import 'components/_header.css';
 
 /* Sections/blocks */
 
