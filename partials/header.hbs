@@ -1,0 +1,32 @@
+<header class="header">
+    <div class="container wrapper flex content-space-b">
+        <a class="header__link" href="/">
+            {{#if @site.logo}}
+                {{> components/image
+                    image_type='site'
+                    picture_class='header__logo'
+                    image_url=@site.logo
+                    size_xs=true
+                    size_s=true
+                    loading='eager'
+                }}
+            {{else}}
+                <span class="site-name">{{@site.title}}</span>
+            {{/if}}
+        </a>
+
+        <nav class="flex items-center">
+            {{navigation is_header=true classes='navigation--is-header'}}
+        </nav>
+            
+        <nav class="header__buttons flex items-center">
+            {{search}}
+            {{^if @member}}
+                <a href="/sign-in" class="button button--minimal">{{t 'Sign in'}}</a>
+                <a href="/sign-up" class="button">{{t 'Subscribe'}}</a> 
+            {{else}}
+                <a href="/account" class="button button--minimal">{{t 'Account'}}</a>
+            {{/if}}
+        </nav>
+    </div>
+</header>
