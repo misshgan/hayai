@@ -1,0 +1,29 @@
+.button {
+    font-size: clamp(2rem, 1.772rem + 0.506vw, 2.4rem);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: var(--color-brand-contrast);
+
+    padding: clamp(1.2rem, 1.086rem + 0.253vw, 1.4rem) 3.4rem;
+    background-color: var(--ghost-accent-color);
+    border: 1px solid var(--ghost-accent-color);
+
+    transition: all .2s;
+
+    &:not(.button--minimal):hover {
+        color: var(--ghost-accent-color);
+        background-color: var(--color-brand-contrast);
+    }
+
+    &--minimal {
+        color: inherit;
+        padding: 0;
+        background-color: unset;
+        border: none;
+    }
+
+    &--minimal:hover {
+        text-decoration: underline;
+    }
+}
