@@ -3,11 +3,30 @@
 // Import CSS
 import "../css/index.css";
 
-// // Import JS
-// import menuOpen from "./menuOpen";
-// import infiniteScroll from "./infiniteScroll";
+function handleHeaderDropdown() {
+    const target = document.querySelector('#header-nav-dropdown-target');
 
+    // Error handling if target is not found
+    if (!target) return;
 
-// // Call the menu and infinite scroll functions
-// menuOpen();
-// infiniteScroll();
+    const dropdownBody = target.querySelector('ul');
+    const showDropdown = dropdownBody?.querySelector('li');
+
+    if (showDropdown) target.classList.remove('hidden');
+
+    target.addEventListener('mouseover', () => {
+        dropdownBody.classList.add('active');
+    });
+
+    target.addEventListener('mouseout', () => {
+        dropdownBody.classList.remove('active');
+    });
+}
+
+handleHeaderDropdown();
+
+// Import images lazy-loading module
+
+import 'lazysizes';
+// import a plugin
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
