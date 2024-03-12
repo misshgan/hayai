@@ -18,6 +18,10 @@
 </head>
 <body class="{{body_class}}">
 
+{{^is 'sign-in, sign-up'}}
+    {{> header}}
+{{/is}}
+
 <main class="main">
 
     {{{body}}}
