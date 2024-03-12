@@ -16,12 +16,6 @@
     &-row {
         flex-direction: row;
     }
-    &-1 {
-        flex: 1;
-    }
-    &-0 {
-        flex: 0;
-    }
     &-cc {
         justify-content: center;
         align-items: center;
