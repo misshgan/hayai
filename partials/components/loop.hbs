@@ -1,0 +1,16 @@
+{{#if is_hero}}
+    {{#get "posts" include='tags,authors' filter='featured:true+feature_image:-null' as | hero_article |}}
+        {{#if hero_article}}
+            <div id="home-hero-swiper" class="articles-loop articles-loop--hero swiper">
+                <ul class="swiper-wrapper">
+                    {{#foreach hero_article}}
+                        <li class="swiper-slide">
+                            {{> components/card is_featured_background=true classes='card--featured-background card--hero'}}
+                        </li>
+                    {{/foreach}}
+                </ul>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        {{/if}}
+    {{/get}}
+{{/if}}
