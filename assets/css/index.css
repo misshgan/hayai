@@ -23,6 +23,7 @@ production stylesheet in assets/built/screen.css using: npm run dev
 /* Utilities */ 
 @import 'utilities/_flex';
 @import 'utilities/_states';
+@import 'utilities/_swiper';
 
 /* Elements */ 
 @import 'elements/_image';
@@ -35,10 +36,13 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import 'default/_errors';
 
 /* Theme components */
-@import 'components/_navigation.css';
-@import 'components/_header.css';
+@import 'components/_navigation';
+@import 'components/_header';
+@import 'components/_card';
+@import 'components/_tags';
 
 /* Sections/blocks */
+@import 'sections/_hero';
 
 /* Pages */
 
