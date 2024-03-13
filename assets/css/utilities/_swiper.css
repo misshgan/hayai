@@ -1,0 +1,11 @@
+#home-hero-swiper {
+    --swiper-scrollbar-border-radius: 0;
+    --swiper-scrollbar-top: auto;
+    --swiper-scrollbar-bottom: 4px;
+    --swiper-scrollbar-left: auto;
+    --swiper-scrollbar-right: 4px;
+    --swiper-scrollbar-sides-offset: 0%;
+    --swiper-scrollbar-bg-color: rgba(0, 0, 0, 0.1);
+    --swiper-scrollbar-drag-bg-color: rgba(0, 0, 0, 1);
+    --swiper-scrollbar-size: 2px;
+}

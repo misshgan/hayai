@@ -1,7 +1,7 @@
-// JavaScript files are compiled and minified during the build process to the assets/built folder. See available scripts in the package.json file.
-
 // Import CSS
 import "../css/index.css";
+
+import { handleHomeHeroSwiper } from "./swiper";
 
 function handleHeaderDropdown() {
     const target = document.querySelector('#header-nav-dropdown-target');
@@ -24,6 +24,11 @@ function handleHeaderDropdown() {
 }
 
 handleHeaderDropdown();
+
+// Check if elements exist before invoking related functions
+const homeHeroSwiper = document.getElementById('home-hero-swiper');
+
+if (homeHeroSwiper) handleHomeHeroSwiper();
 
 // Import images lazy-loading module
 
