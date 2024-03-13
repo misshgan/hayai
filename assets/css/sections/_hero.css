@@ -1,0 +1,21 @@
+.hero {
+
+    .container {
+       
+    }
+
+    h1 {
+        font-size: clamp(4.6rem, 4.03rem + 1.266vw, 5.6rem);
+        font-style: normal;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .articles-loop {
+        margin-top: clamp(2rem, 1.43rem + 1.266vw, 3rem);
+    }
+
+    .swiper {
+        padding-bottom: 2.4rem;
+    }
+}
