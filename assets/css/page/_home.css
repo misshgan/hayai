@@ -1,0 +1,17 @@
+.home {
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .home-side {
+        width: 24%;
+        row-gap: 5rem;
+    }
+
+    .home-main {
+        width: 70%;
+        row-gap: 5rem;
+    }
+}
