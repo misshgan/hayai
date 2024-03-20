@@ -1,0 +1,100 @@
+
+/* Default styles for articles loop */
+.articles-loop {
+    h2 {
+        font-size: clamp(4rem, 3.772rem + 0.506vw, 4.4rem);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-style: normal;
+    }
+
+    ul {
+
+    }
+}
+
+/* Hero articles loop */
+.articles-loop.articles-loop--hero {
+
+
+    h1 {
+        font-size: clamp(4.6rem, 4.03rem + 1.266vw, 5.6rem);
+        font-style: normal;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    & > div {
+        margin-top: clamp(2rem, 1.43rem + 1.266vw, 3rem);
+    }
+
+    .swiper {
+        padding-bottom: 2.4rem;
+    }
+}
+
+/* Sidebar articles loop */
+.articles-loop.articles-loop--sidebar {
+
+    & > ul {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        row-gap: clamp(1.6rem, 1.372rem + 0.506vw, 2rem);
+    }
+
+    li:not(:last-child) .card {
+        padding-bottom: clamp(1.6rem, 1.372rem + 0.506vw, 2rem);
+        border-bottom: 1px solid var(--color-grey);
+    }
+}
+
+/* Main 1 articles loop */
+.articles-loop--main-1 {
+
+    & > ul {
+        margin-top: 2.4rem;
+        gap: 2rem; 
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+
+    li:first-child {
+        grid-column: span 2;
+    }
+
+    & > ul > li:not(:first-child) {
+        background-color: var(--color-grey-light);
+    }
+}
+
+/* Main 2 articles loop */
+
+.articles-loop--main-2 {
+    
+    & > ul {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: clamp(2rem, 1.43rem + 1.266vw, 3rem);
+    }
+}
+
+/* Main 3 articles loop */
+
+.articles-loop--main-3 {
+
+    & > ul {
+        margin-top: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 2.5rem;
+        row-gap: 2rem;
+    }
+
+    li {
+        width: calc(50% - 1.25rem);
+    }
+}
