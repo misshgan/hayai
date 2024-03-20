@@ -1,9 +1,7 @@
-{{#if is_hero}}
-    {{#if tags}}
-        <ul class="tags flex items-center {{classes}}">
-            {{#foreach tags}}
-                <li><a href="{{url}}">{{name}}</a></li>
-            {{/foreach}}
-        </ul>
-    {{/if}}
+{{#if tags}}
+    <ul class="tags flex items-center {{classes}}">
+        {{#foreach tags to=limit}}
+            <li><a href="{{url}}">{{name}}</a></li>
+        {{/foreach}}
+    </ul>
 {{/if}}
