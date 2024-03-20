@@ -1,0 +1,16 @@
+<form 
+    class="form"
+    data-members-form={{type}}
+>
+    <label>
+        <span>Email</span>
+        <input type="email" required placeholder="Email">
+    </label>
+
+    <button class="button">Subscribe {{> icons/loader}}</button>
+
+    <div class="form__notification flex flex-col">
+        <p class="form__error-text" data-members-error></p>
+        <p class="form__success-text">{{t 'The magic link was successfully sent!'}}</p>
+    </div>
+</form>
