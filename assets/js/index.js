@@ -1,6 +1,12 @@
 // Import CSS
 import "../css/index.css";
 
+// Import images lazy-loading module
+import 'lazysizes';
+// import lazysizes plugin
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+
+// Import home hero swiper function
 import { handleHomeHeroSwiper } from "./swiper";
 
 function handleHeaderDropdown() {
@@ -10,9 +16,6 @@ function handleHeaderDropdown() {
     if (!target) return;
 
     const dropdownBody = target.querySelector('ul');
-    const showDropdown = dropdownBody?.querySelector('li');
-
-    if (showDropdown) target.classList.remove('hidden');
 
     target.addEventListener('mouseover', () => {
         dropdownBody.classList.add('active');
@@ -29,9 +32,3 @@ handleHeaderDropdown();
 const homeHeroSwiper = document.getElementById('home-hero-swiper');
 
 if (homeHeroSwiper) handleHomeHeroSwiper();
-
-// Import images lazy-loading module
-
-import 'lazysizes';
-// import a plugin
-import 'lazysizes/plugins/parent-fit/ls.parent-fit';
