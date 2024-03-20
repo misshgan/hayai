@@ -1,5 +1,5 @@
-{{#if is_featured_background}}
-    <article class="card flex flex-col {{classes}}">
+{{#if has_image_on_background}}
+    <article class="card flex flex-col {{classes}} card--has-image-on-background">
         <a href="{{url}}" title="Visit publication page" class="card__link"></a>
         <figure class="card__image">
             {{> components/image
@@ -17,10 +17,40 @@
 
         <div class="card__text flex flex-col">
             <div class="flex items-center content-space-b">
-                {{> components/tags is_hero=true classes='tags--hero'}}
+                {{> components/tags limit='3' classes='tags--hero'}}
                 <time>{{reading_time minute="Only a minute" minutes="% min read"}}</time>
             </div>
             <h3>{{title}}</h3>
+        </div>
+    </article>
+{{else}}
+    <article class="card {{classes}}">
+        {{#if is_image}}
+            <figure class="card__image">
+                {{> components/image
+                    image_type='post'
+                    image_class='lazyload'
+                    image_url=feature_image
+                    size_xs=true
+                    size_s=true
+                    size_m=true
+                    size_l=true
+                    size_xl=true
+                    loading='lazy'
+                }}
+            </figure>
+        {{/if}}
+        <div class="card__text">
+            <div class="card__header flex content-space-b">
+                {{> components/tags is_article=true classes='tags--article' limit='1'}}
+                <time>{{reading_time minute="Only a minute" minutes="% min read"}}</time>
+            </div>
+            <h3><a href="{{url}}">{{title}}</a></h3>
+            {{#if is_custom_excerpt}}
+                {{#if custom_excerpt}}
+                    <p class="card__custom_excerpt">{{custom_excerpt}}</p>
+                {{/if}}
+            {{/if}}
         </div>
     </article>
 {{/if}}
