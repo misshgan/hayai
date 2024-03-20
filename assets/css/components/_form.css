@@ -1,0 +1,105 @@
+.form {
+    width: 100%;
+    display: flex;
+    position: relative;
+
+    label > span {
+        display: none;
+    }
+
+    label > input {
+        width: 100%;
+        height: 100%;
+        padding: 0 clamp(1.2rem, 0.403rem + 1.772vw, 2.6rem);
+        position: relative;
+
+        font-size: clamp(1.4rem, 1.172rem + 0.506vw, 1.8rem);
+        font-weight: 400;
+        line-height: 1;
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    label > input::placeholder {
+        font-size: clamp(1.4rem, 1.172rem + 0.506vw, 1.8rem);
+        font-weight: 400;
+        line-height: 1;
+        top: 50%;
+        transform: translate(0, -50%);
+        position: absolute;
+        transition: all .1s;
+    }
+
+    label > input:focus-visible::placeholder {
+        opacity: 0;
+    }
+
+    label {
+        flex-grow: 1;
+    }
+
+    .button {
+        font-size: clamp(1.6rem, 1.258rem + 0.759vw, 2.2rem);
+        font-weight: 500;
+        padding: 1.2rem clamp(2.4rem, 1.773rem + 1.392vw, 3.5rem);
+        border-top: none;
+        border-bottom: none;
+        cursor: pointer;
+
+        position: relative;
+
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        svg path {
+            fill: var(--color-brand-contrast);
+        }
+    }
+
+    &.loading button {
+        color: transparent;
+        cursor: not-allowed;
+
+        &:hover {
+            background-color: var(--ghost-accent-color);
+            color: transparent;
+        }
+
+        svg {
+            display: block;
+        }
+    }
+
+    &__notification {
+        position: absolute;
+        top: calc(100% + 1.4rem);
+        width: 100%;
+        text-align: center;
+
+        p {
+            font-size: 1.4rem;
+            visibility: hidden;
+        }
+    }
+
+    &__error-text {
+        color: var(--color-error);
+    }
+
+    &__success-text {
+        color: var(--color-success)
+    }
+
+    &.error &__error-text,
+    &.success &__success-text {
+        visibility: visible;
+    }
+
+}

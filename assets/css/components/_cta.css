@@ -1,0 +1,27 @@
+.cta {
+    padding: 6rem 1.6rem;
+    background-color: var(--color-black);
+
+    & > * {
+        text-align: center;
+        color: var(--color-white)
+    }
+
+    &__title {
+        font-size: clamp(3rem, 2.658rem + 0.759vw, 3.6rem);
+        font-weight: 600;
+        max-width: 64rem;
+    }
+
+    &__subtitle {
+        margin-top: clamp(1.2rem, 1.086rem + 0.253vw, 1.4rem);
+        font-size: clamp(1.8rem, 1.572rem + 0.506vw, 2.2rem);
+        font-weight: 400;
+        max-width: 52.5rem;
+    }
+
+    .form {
+        margin-top: 2.8rem;
+        max-width: 52.5rem;
+    }
+}
