@@ -40,11 +40,12 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import 'components/_header';
 @import 'components/_card';
 @import 'components/_tags';
+@import 'components/_loop';
 
 /* Sections/blocks */
-@import 'sections/_hero';
 
 /* Pages */
+@import 'page/_home';
 
 /* Post */
 @import 'post/_comments';
