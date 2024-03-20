@@ -1,16 +1,57 @@
 {{#if is_hero}}
-    {{#get "posts" include='tags,authors' filter='featured:true+feature_image:-null' as | hero_article |}}
-        {{#if hero_article}}
-            <div id="home-hero-swiper" class="articles-loop articles-loop--hero swiper">
-                <ul class="swiper-wrapper">
-                    {{#foreach hero_article}}
-                        <li class="swiper-slide">
-                            {{> components/card is_featured_background=true classes='card--featured-background card--hero'}}
-                        </li>
-                    {{/foreach}}
-                </ul>
-                <div class="swiper-scrollbar"></div>
-            </div>
+    <section class="articles-loop articles-loop--hero">
+        <h1>
+            {{#if @custom.home_page_main_title}}
+                {{@custom.home_page_main_title}}
+            {{else}}
+                {{@site.title}}
+            {{/if}}
+        </h1>
+
+        {{#get "posts" include='tags,authors' filter='featured:true+feature_image:-null' as | hero_article |}}
+            {{#if hero_article}}
+                <div id="home-hero-swiper" class="swiper">
+                    <ul class="swiper-wrapper">
+                        {{#foreach hero_article}}
+                            <li class="swiper-slide">
+                                {{> components/card has_image_on_background=true classes='card--hero'}}
+                            </li>
+                        {{/foreach}}
+                    </ul>
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            {{/if}}
+        {{/get}}
+    </section>
+{{else if is_articles}}
+    <section class="articles-loop {{classes}} flex flex-col">
+        {{#if title}}
+            <h2>{{title}}</h2>
         {{/if}}
-    {{/get}}
+
+        {{#get "posts" include='tags,authors' limit=limit filter=filter as |articles|}}
+            {{#if articles}}
+                <ul>
+                {{#foreach articles}}
+                    <li>
+                        {{#if @first}}
+                            {{> components/card
+                                is_image=../../with_images
+                                has_image_on_background=../../with_first_featured_post
+                                is_custom_excerpt=../../with_custom_excerpt
+                                classes=../../article_classes
+                            }}
+                        {{else}}
+                            {{> components/card
+                                is_image=../../with_images
+                                is_custom_excerpt=../../with_custom_excerpt
+                                classes=../../article_classes
+                            }}
+                        {{/if}}
+                    </li>
+                {{/foreach}}
+                </ul>
+            {{/if}}
+        {{/get}}
+    </section>
 {{/if}}
