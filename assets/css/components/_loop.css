@@ -1,6 +1,8 @@
 
 /* Default styles for articles loop */
 .articles-loop {
+    position: relative;
+
     h2 {
         font-size: clamp(4rem, 3.772rem + 0.506vw, 4.4rem);
         font-weight: 700;
@@ -8,8 +10,21 @@
         font-style: normal;
     }
 
-    ul {
+    &__read-more {
+        position: absolute;
+        top: 1.6rem;
+        right: 0;
 
+        font-size: 2rem;
+        font-weight: 400;
+
+        svg {
+            margin-left: 0.8rem;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 

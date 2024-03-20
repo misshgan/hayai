@@ -25,9 +25,15 @@
     </section>
 {{else if is_articles}}
     <section class="articles-loop {{classes}} flex flex-col">
-        {{#if title}}
-            <h2>{{title}}</h2>
-        {{/if}}
+        <div class="article-loop__header">
+            {{#if title}}
+                <h2>{{title}}</h2>
+            {{/if}}
+
+            {{#if with_link_to_more}}
+                <a href="/" class="articles-loop__read-more flex items-center">Read more {{> icons/arrow-right}}</a>
+            {{/if}}
+        </div>
 
         {{#get "posts" include='tags,authors' limit=limit filter=filter as |articles|}}
             {{#if articles}}
@@ -53,5 +59,7 @@
                 </ul>
             {{/if}}
         {{/get}}
+
+
     </section>
 {{/if}}
