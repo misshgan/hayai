@@ -9,8 +9,8 @@
         </a>
       </li>
     {{/foreach}}
-    {{#if navigation from='4'}}
-      <li id="header-nav-dropdown-target" class="navigation-dropdown hidden">
+    {{#match navigation.length ">" '3'}}
+      <li id="header-nav-dropdown-target" class="navigation-dropdown">
         {{> icons/dots}}
         <ul class="flex flex-col">
           {{#foreach navigation from='4'}}
@@ -23,7 +23,7 @@
           {{/foreach}}
         </ul>
       </li>
-    {{/if}}
+    {{/match}}
 
   {{else}}
 
