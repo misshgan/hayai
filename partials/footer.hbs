@@ -1,0 +1,28 @@
+<footer class="footer">
+    <div class="wrapper">
+        <div class="footer__header flex content-space-b">
+            <a class="footer__link" href="/">
+                {{#if @site.logo}}
+                    {{> components/image
+                        image_type='site'
+                        picture_class='footer__logo'
+                        image_url=@site.logo
+                        size_xs=true
+                        size_s=true
+                        loading='eager'
+                    }}
+                {{else}}
+                    <span class="site-name">{{@site.title}}</span>
+                {{/if}}
+            </a>
+
+            {{> components/cta is_footer=true classes='cta--footer'}}
+        </div>
+        <div class="footer__main flex">
+            {{> navigation classes='navigation--is-footer' is_header=false}}
+            {{#if @site.secondary_navigation}}
+                {{navigation type='secondary' classes='navigation--is-footer' is_header=false}}
+            {{/if}}
+        </div>
+    </div>
+</footer>
