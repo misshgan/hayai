@@ -1,0 +1,9 @@
+{{!< default}}
+
+<section class="categories">
+    <div class="wrapper">
+        {{#page}} {{> components/page-header title=title subtitle=custom_excerpt}} {{/page}}
+        
+        {{> components/loop is_tags=true}}
+    </div>
+</section>
