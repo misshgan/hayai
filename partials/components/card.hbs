@@ -23,8 +23,35 @@
             <h3>{{title}}</h3>
         </div>
     </article>
+{{else if is_tag}}
+    <a href="{{url}}" class="card card--tag {{classes}}">
+        <article>
+            {{#if feature_image}}
+                <figure class="card__image">
+                    {{> components/image
+                        image_type='tag'
+                        image_class='lazyload'
+                        image_url=feature_image
+                        size_xs=true
+                        size_s=true
+                        size_m=true
+                        size_l=true
+                        size_xl=true
+                        loading='lazy'
+                    }}
+                </figure>
+            {{/if}}
+            <h3 class="card__title">{{name}}</h3>
+            {{#if description}}
+                <p class="card__description">{{description}}</p>
+            {{/if}}
+            {{#get "posts" filter='tag:{{slug}}'}}
+                <span class="card__amount">{{posts.length}} posts</span>
+            {{/get}}
+        </article>
+    </a>
 {{else}}
-    <article class="card {{classes}}">
+    <article class="card card--category {{classes}}">
         {{#if is_image}}
             <figure class="card__image">
                 {{> components/image
