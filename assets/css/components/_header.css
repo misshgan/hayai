@@ -10,18 +10,12 @@
     img {
         max-width: 12rem;
     }
-}
-.container {
-}
-.wrapper {
-}
-.flex {
-}
-.site-name {
-}
-.items-center {
-}
-.button {
-}
-.button--minimal {
+
+    .site-name {
+        font-size: 3.6rem;
+        font-style: italic;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+    }
 }
