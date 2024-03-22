@@ -1,4 +1,8 @@
 <ul class="navigation flex {{classes}}">
+  {{#if title}}
+    <h2 class="navigation__title">{{title}}</h2>
+  {{/if}}
+
   {{#if is_header}}
     
     {{#foreach navigation to='3'}}
