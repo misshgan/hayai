@@ -43,6 +43,8 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import 'components/_loop';
 @import 'components/_cta';
 @import 'components/_form';
+@import 'components/_footer';
+@import 'components/_page-header';
 
 /* Sections/blocks */
 
