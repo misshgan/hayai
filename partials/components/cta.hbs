@@ -1,5 +1,7 @@
-<article class="cta flex flex-col items-center">
-    <h2 class="cta__title">Explore Further into the Latest News</h2>
+<article class="cta flex flex-col items-center {{classes}}">
+    {{^if is_footer}}
+        <h2 class="cta__title">Explore Further into the Latest News</h2>
+    {{/if}}
     <p class="cta__subtitle">Subscribe to our newsletter and delve into compelling narratives that hold significance.</p>
     {{> components/form type='subscribe'}}
 </article>
