@@ -62,4 +62,24 @@
 
 
     </section>
+{{else if is_tags}}
+    {{#get "tags" limit='all'}}
+        {{#if tags}}
+           <section class="tags-loop tags-loop--categories">
+                <div class="tags-loop__header">{{tags.length}} tags</div>
+                <ul>
+                    {{#foreach tags}}
+                        {{#if feature_image}}
+                            {{> components/card is_tag=true}}
+                        {{/if}}
+                    {{/foreach}}
+                    {{#foreach tags}}
+                         {{^if feature_image}}
+                            {{> components/card is_tag=true}}
+                        {{/if}}
+                    {{/foreach}}
+                </ul>
+           </section>
+        {{/if}}
+    {{/get}}
 {{/if}}
