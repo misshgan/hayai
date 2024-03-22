@@ -113,3 +113,32 @@
         width: calc(50% - 1.25rem);
     }
 }
+
+
+/* Categories tags loop */
+
+.tags-loop.tags-loop--categories {
+    display: flex;
+    flex-direction: column;
+    margin-top: clamp(1.8rem, 1.116rem + 2.43vw, 3rem);
+
+    .tags-loop__header {
+        font-size: clamp(1.4rem, 0.83rem + 2.025vw, 2.4rem);
+        font-weight: 700;
+        text-align: end;
+        padding-bottom: clamp(0.6rem, 0.372rem + 0.81vw, 1rem);
+        border-bottom: 1px solid var(--color-grey)
+    }
+
+    .card {
+        width: 23.5%;
+    }
+    
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 2%;
+        padding-top: 5rem;
+        row-gap: 4rem;
+    }
+}
