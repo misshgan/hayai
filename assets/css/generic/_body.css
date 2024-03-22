@@ -33,6 +33,7 @@ body {
 
 main {
     position: relative;
+    padding-bottom: clamp(7rem, 5.291rem + 6.076vw, 10rem);
 }
 
 @media (print), (prefers-reduced-motion: reduce) {
