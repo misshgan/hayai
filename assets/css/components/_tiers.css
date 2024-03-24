@@ -1,0 +1,44 @@
+.tiers {
+    margin-top: clamp(2rem, 1.286rem + 1.905vw, 3rem);
+    margin-bottom: clamp(7rem, 4.857rem + 5.714vw, 10rem);
+    
+    .wrapper {
+        border-top: 1px solid var(--color-grey);
+        padding-top: clamp(2rem, 1.286rem + 1.905vw, 3rem);
+    }
+
+    .tiers-switch[data-active-price="yearly"] + .tiers-cards [data-monthly],
+    .tiers-switch[data-active-price="monthly"] + .tiers-cards [data-yearly] {
+        display: none;
+    }
+
+    .tiers-switch {
+        background-color: var(--color-grey-light);
+        width: max-content;
+        margin: 0 auto;
+        padding: 0.4rem;
+
+        button {
+            font-size: 1.8rem;
+            font-weight: 500;
+            padding: 1.4rem 4.2rem;
+            color: var(--color-black);
+            background-color: transparent;
+            cursor: pointer;
+        }
+    }
+
+    .tiers-switch[data-active-price="yearly"] > button[data-price='yearly'],
+    .tiers-switch[data-active-price="monthly"] > button[data-price='monthly'] {
+       background-color: var(--ghost-accent-color);
+       color: var(--color-brand-contrast)
+    }
+
+    .tiers-cards {
+        margin-top: clamp(4rem, 2.571rem + 3.81vw, 6rem);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
+        row-gap: 3rem;
+    }
+}
