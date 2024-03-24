@@ -184,3 +184,22 @@
         grid-column: span 2;
     }
 }
+
+
+/* Author page loop */
+
+.articles-loop.articles-loop--author-page {
+    margin-top: clamp(1.8rem, 0.229rem + 4.19vw, 4rem);
+
+    .articles-loop__header {
+        font-size: clamp(1.4rem, 0.83rem + 2.025vw, 2.4rem);
+        font-weight: 700;
+        text-align: end;
+        padding-bottom: clamp(0.6rem, 0.372rem + 0.81vw, 1rem);
+        border-bottom: 1px solid var(--color-grey)
+    }
+
+    & > ul {
+        margin-top: clamp(3rem, 2.286rem + 1.905vw, 4rem);
+    }
+}
