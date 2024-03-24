@@ -370,3 +370,65 @@
         }
     }
 }
+
+
+/* Tier card */
+
+.card.tier {
+    padding: clamp(2rem, 1.286rem + 1.905vw, 3rem) clamp(1.6rem, 0.886rem + 1.905vw, 2.6rem);
+    background-color: var(--color-grey-light);
+
+    h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    h3 {
+        margin-top: 1.6rem;
+
+        font-size: 3rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-family: var(--font-headings);
+        color: var(--ghost-accent-color)
+    }
+
+    ul,p {
+        margin-top: 1.6rem;
+    }
+
+    ul {
+        list-style-type: none;
+        row-gap: 1.4rem;
+        margin-bottom: 4rem;
+    }
+
+    li {
+        position: relative;
+        font-size: 1.8rem;
+
+        svg {
+            width: 2.2rem;
+            height: 2.2rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        &::before {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+
+    p {
+        font-size: 2rem;
+        font-weight: 500;
+        margin-bottom: 4rem;
+    }
+
+    .button {
+        text-align: center;
+        margin-top: auto;
+    }
+}
