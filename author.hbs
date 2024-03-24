@@ -1,2 +1,25 @@
 {{!< default}}
 
+<section class="author">
+    <div class="wrapper">
+        {{#author}}
+            {{> components/page-header title=name subtitle=bio author_profile_image=profile_image}}
+
+            {{> components/loop 
+                filter='author:{{slug}}' 
+                limit='all' 
+                is_articles=true 
+                with_images=true 
+                with_custom_excerpt=true
+                classes='articles-loop--main-2 articles-loop--author-page' 
+                article_classes='card--main-2 card--author-page'
+                with_articles_counter=true
+                pagination=../pagination
+            }}
+        {{/author}}
+    </div>
+</section>
+
+<div class="wrapper">
+    {{> components/cta}}
+</div>
