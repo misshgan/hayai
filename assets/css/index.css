@@ -46,6 +46,7 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import 'components/_footer';
 @import 'components/_page-header';
 @import 'components/_tiers';
+@import 'components/_subscription-info';
 
 /* Sections/blocks */
 

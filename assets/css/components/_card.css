@@ -323,15 +323,15 @@
     &:first-child > .card {
 
         & > .card__text {
-            padding: clamp(3.2rem, 2.629rem + 1.524vw, 4rem);
+            padding: clamp(3.2rem, 2.744rem + 1.013vw, 4rem);
         }
 
         & > .card__text > h3 {
-            font-size: clamp(3rem, 2.286rem + 1.905vw, 4rem);
+            font-size: clamp(3rem, 2.43rem + 1.266vw, 4rem);
         }
 
         & > .card__text > div {
-            font-size: clamp(1.6rem, 1.171rem + 1.143vw, 2.2rem);
+            font-size: clamp(1.6rem, 1.258rem + 0.759vw, 2.2rem);
         }
 
         & > .card__text > div > ul {
@@ -344,7 +344,7 @@
     &:nth-child(3) > .card {
         
         & > .card__text {
-            padding: clamp(1.6rem, 0.886rem + 1.905vw, 2.6rem);
+            padding: clamp(1.6rem, 1.03rem + 1.266vw, 2.6rem);
         }
 
         & > .card__text ul {
@@ -352,7 +352,7 @@
         }
 
         & > .card__text div {
-            font-size: clamp(1.6rem, 1.457rem + 0.381vw, 1.8rem);
+            font-size: clamp(1.6rem, 1.486rem + 0.253vw, 1.8rem);
         }
 
         & > .card__text h3 {
@@ -366,7 +366,7 @@
         }
 
         & > .card__text {
-            padding: clamp(1.4rem, 0.971rem + 1.143vw, 2rem) 1rem;
+            padding: clamp(1.4rem, 1.058rem + 0.759vw, 2rem) 1rem;
         }
     }
 }
@@ -375,7 +375,7 @@
 /* Tier card */
 
 .card.tier {
-    padding: clamp(2rem, 1.286rem + 1.905vw, 3rem) clamp(1.6rem, 0.886rem + 1.905vw, 2.6rem);
+    padding: clamp(2rem, 1.43rem + 1.266vw, 3rem) clamp(1.6rem, 1.03rem + 1.266vw, 2.6rem);
     background-color: var(--color-grey-light);
 
     h2 {
@@ -465,6 +465,6 @@
     }
 
     .card__text {
-        padding: clamp(1.6rem, 1.314rem + 0.762vw, 2rem);
+        padding: clamp(1.6rem, 1.372rem + 0.506vw, 2rem);
     }
 }

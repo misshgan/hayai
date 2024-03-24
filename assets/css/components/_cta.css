@@ -1,7 +1,7 @@
 .cta {
     padding: 6rem 1.6rem;
     background-color: var(--color-black);
-    margin-top: clamp(7rem, 4.857rem + 5.714vw, 10rem);
+    margin-top: clamp(7rem, 5.291rem + 3.797vw, 10rem);
 
     & > * {
         text-align: center;
