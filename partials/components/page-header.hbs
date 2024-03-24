@@ -1,4 +1,19 @@
 <div class="page-header">
+    {{#if author_profile_image}}
+     <figure class="card__image">
+        {{> components/image
+            image_type='author'
+            image_class='lazyload'
+            image_url=author_profile_image
+            size_xs=true
+            size_s=true
+            size_m=true
+            size_l=true
+            size_xl=true
+            loading='lazy'
+        }}
+    </figure>
+    {{/if}}
     <h1>{{title}}</h1>
     <p>{{subtitle}}</p>
 </div>
