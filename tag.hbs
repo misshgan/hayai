@@ -1,1 +1,27 @@
 {{!< default}}
+
+
+<section class="tag">
+    <div class="wrapper">
+        {{#tag}} 
+        
+        {{> components/page-header title=name subtitle=description}} 
+
+        {{> components/loop 
+            filter='tag:{{slug}}' 
+            limit='all' 
+            is_articles=true 
+            with_images=true 
+            with_articles_counter=true
+            pagination=../pagination
+            with_first_featured_post=true
+            with_second_and_third_featured_posts=true
+            classes='articles-loop--tag-page' 
+            article_classes='card--tag-page card--main-1'
+        }}
+
+        {{/tag}}
+
+        {{> components/cta}}
+    </div>
+</section>
