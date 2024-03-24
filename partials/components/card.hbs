@@ -1,29 +1,4 @@
-{{#if has_image_on_background}}
-    <article class="card flex flex-col {{classes}} card--has-image-on-background">
-        <a href="{{url}}" title="Visit publication page" class="card__link"></a>
-        <figure class="card__image">
-            {{> components/image
-                image_type='post'
-                image_class='lazyload'
-                image_url=feature_image
-                size_xs=true
-                size_s=true
-                size_m=true
-                size_l=true
-                size_xl=true
-                loading='lazy'
-            }}
-        </figure>
-
-        <div class="card__text flex flex-col">
-            <div class="flex items-center content-space-b">
-                {{> components/tags limit='3' classes='tags--hero'}}
-                <time>{{reading_time minute="Only a minute" minutes="% min read"}}</time>
-            </div>
-            <h3>{{title}}</h3>
-        </div>
-    </article>
-{{else if is_tag}}
+{{#if is_tag}}
     <a href="{{url}}" class="card card--tag {{classes}}">
         <article>
             {{#if feature_image}}
@@ -51,9 +26,10 @@
         </article>
     </a>
 {{else}}
-    <article class="card card--category {{classes}}">
+    <article class="card {{classes}}">
         {{#if is_image}}
-            <figure class="card__image">
+            {{#if feature_image}}
+                <figure class="card__image">
                 {{> components/image
                     image_type='post'
                     image_class='lazyload'
@@ -66,6 +42,7 @@
                     loading='lazy'
                 }}
             </figure>
+            {{/if}}
         {{/if}}
         <div class="card__text">
             <div class="card__header flex content-space-b">
