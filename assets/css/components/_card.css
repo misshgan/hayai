@@ -12,11 +12,17 @@
 
 /* Big card with the feature image in the background */
 
-.card.card--has-image-on-background {
-    aspect-ratio: 1.58 / 1;
+.card.card--has-image-on-background,
+.articles-loop--tag-page > ul > li:first-child > .card,
+.articles-loop--tag-page > ul > li:nth-child(2) > .card,
+.articles-loop--tag-page > ul > li:nth-child(3) > .card,
+.articles-loop--main-1 > ul > li:first-child > .card {
+    display: flex;
+    flex-direction: column;
     position: relative;
 
-    .card__link {
+    &::after {
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
@@ -26,8 +32,8 @@
 
         background: linear-gradient(
             180deg,
-            rgba(0, 0, 0, 0) 36.44%,
-            rgba(0, 0, 0, 0.7) 100%
+            transparent 0%,
+            rgba(0, 0, 0, 0.4) 100%
         );
     }
 
@@ -84,6 +90,16 @@
     }
 }
 
+.articles-loop--tag-page > ul > li:first-child > .card {
+    aspect-ratio: 2.04 / 1
+}
+
+.articles-loop--tag-page > ul > li:nth-child(2) > .card,
+.articles-loop--tag-page > ul > li:nth-child(3) > .card,
+.articles-loop--main-1 > ul > li:first-child > .card {
+    aspect-ratio: 1.49 / 1;
+}
+
 /* Sidebar article card */
 
 .articles-loop--sidebar {
@@ -134,7 +150,7 @@
         padding: clamp(1rem, 0.658rem + 0.759vw, 1.6rem);
     }
 
-    .card.card--has-image-on-background > .card__text {
+    &:first-child > .card__text {
         padding: clamp(1.6rem, 1.03rem + 1.266vw, 2.6rem);
     }
 
@@ -160,7 +176,7 @@
     display: flex;
 
     .card__image {
-        width: 31.83%;
+        min-width: 31.83%;
         aspect-ratio: 1.24 / 1;
 
         img {
@@ -215,7 +231,7 @@
     }
 
     .card__image {
-        width: 13.5rem;
+        min-width: 13.5rem;
         aspect-ratio: 1 / 1;
 
         img {
@@ -228,6 +244,10 @@
     h3 {
         font-size: 2.6rem;
         font-weight: 400;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
     }
 }
 
