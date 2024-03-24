@@ -9,6 +9,10 @@
   padding-left: var(--padding-base);
 }
 
+.author > .wrapper {
+  max-width: 86rem;
+}
+
 .container-fixed, .container {
   margin-right: auto;
   margin-left: auto;
