@@ -14,7 +14,10 @@
                     <ul class="swiper-wrapper">
                         {{#foreach hero_article}}
                             <li class="swiper-slide">
-                                {{> components/card has_image_on_background=true classes='card--hero'}}
+                                {{> components/card 
+                                    classes='card--hero card--has-image-on-background flex flex-col'
+                                    is_image=true
+                                }}
                             </li>
                         {{/foreach}}
                     </ul>
@@ -25,13 +28,17 @@
     </section>
 {{else if is_articles}}
     <section class="articles-loop {{classes}} flex flex-col">
-        <div class="article-loop__header">
+        <div class="articles-loop__header">
             {{#if title}}
                 <h2>{{title}}</h2>
             {{/if}}
 
             {{#if with_link_to_more}}
                 <a href="/" class="articles-loop__read-more flex items-center">Read more {{> icons/arrow-right}}</a>
+            {{/if}}
+
+            {{#if with_articles_counter}}
+                {{plural pagination.total empty='posts' singular='% post' plural='% posts'}}
             {{/if}}
         </div>
 
@@ -40,10 +47,15 @@
                 <ul>
                 {{#foreach articles}}
                     <li>
-                        {{#if @first}}
+                        {{#has number="1"}}
                             {{> components/card
                                 is_image=../../with_images
-                                has_image_on_background=../../with_first_featured_post
+                                is_custom_excerpt=../../with_custom_excerpt
+                                classes=../../article_classes
+                            }}
+                        {{else has number='2,3'}}
+                            {{> components/card
+                                is_image=../../with_images
                                 is_custom_excerpt=../../with_custom_excerpt
                                 classes=../../article_classes
                             }}
@@ -53,7 +65,7 @@
                                 is_custom_excerpt=../../with_custom_excerpt
                                 classes=../../article_classes
                             }}
-                        {{/if}}
+                        {{/has}}
                     </li>
                 {{/foreach}}
                 </ul>
