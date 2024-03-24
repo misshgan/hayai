@@ -1,0 +1,19 @@
+{{!< ../default}}
+
+<section class="membership">
+    <div class="wrapper">
+        {{#page}}
+            {{> components/page-header title=title subtitle=custom_excerpt}} 
+        {{/page}}
+    </div>
+
+    {{> components/tiers}}
+
+    <div class="wrapper">
+        {{#page}}
+            <article style="margin-bottom: 0;" class="post-content">
+                {{content}}
+            </article>
+        {{/page}}
+    </div>
+</section>
