@@ -432,3 +432,39 @@
         margin-top: auto;
     }
 }
+
+
+/* Author page card */
+
+.card.card--author-page {
+
+    .card__image {
+        width: 24.4%;
+        aspect-ratio: 1 /1 ;
+    }
+
+    .card__header {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        margin-top: 1.4rem;
+        font-size: 2.6rem;
+        font-weight: 700;
+    }
+
+    p {
+        margin-top: 1rem;
+
+        font-size: 2.6rem;
+        font-weight: 400;
+    }
+
+    .card__header > ul {
+        color: var(--ghost-accent-color)
+    }
+
+    .card__text {
+        padding: clamp(1.6rem, 1.314rem + 0.762vw, 2rem);
+    }
+}
