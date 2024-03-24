@@ -121,6 +121,7 @@
     display: flex;
     flex-direction: column;
     margin-top: clamp(1.8rem, 1.116rem + 2.43vw, 3rem);
+    margin-bottom: clamp(7rem, 5.291rem + 6.076vw, 10rem);
 
     .tags-loop__header {
         font-size: clamp(1.4rem, 0.83rem + 2.025vw, 2.4rem);
@@ -140,5 +141,46 @@
         column-gap: 2%;
         padding-top: 5rem;
         row-gap: 4rem;
+    }
+}
+
+/* Tag page articles loop */
+
+.articles-loop.articles-loop--tag-page {
+    margin-top: clamp(1.8rem, 1.116rem + 1.519vw, 3rem);
+    margin-bottom: clamp(7rem, 5.291rem + 6.076vw, 10rem);
+    
+    .articles-loop__header {
+        font-size: clamp(1.4rem, 0.83rem + 2.025vw, 2.4rem);
+        font-weight: 700;
+        text-align: end;
+        padding-bottom: clamp(0.6rem, 0.372rem + 0.81vw, 1rem);
+        border-bottom: 1px solid var(--color-grey)
+    }
+
+    & ul > li:first-child .card__image {
+        aspect-ratio: 2.04 / 1
+    }
+
+    & > ul {
+        margin-top: 4rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 2rem;
+        row-gap: clamp(3rem, 2.43rem + 1.266vw, 4rem);
+    }
+
+    & > ul > li {
+        background-color: var(--color-grey-light);
+        height: max-content
+    }
+
+    & > ul li:first-child {
+        grid-column: span 4;
+    }
+
+    & > ul li:nth-child(2),
+    & > ul li:nth-child(3) {
+        grid-column: span 2;
     }
 }
