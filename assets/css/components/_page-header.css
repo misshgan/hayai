@@ -1,5 +1,11 @@
 .page-header {
 
+    figure {
+        width: 23rem;
+        height: 23rem;
+        margin-bottom: 1rem;
+    }
+
     & > * {
         text-align: center;
         width: min(82rem, 100%);
