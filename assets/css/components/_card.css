@@ -55,7 +55,6 @@
         h3 {
             margin-top: 1.6rem;
 
-            font-size: 3rem;
             color: var(--color-white);
             font-style: normal;
             font-weight: 700;
@@ -65,7 +64,6 @@
         }
 
         & > div {
-            font-size: 1.8rem;
             color: var(--color-white);
 
             position: relative;
@@ -176,7 +174,8 @@
     display: flex;
 
     .card__image {
-        min-width: 31.83%;
+        flex-shrink: 0;
+        width: 31.83%;
         aspect-ratio: 1.24 / 1;
 
         img {
@@ -231,7 +230,8 @@
     }
 
     .card__image {
-        min-width: 13.5rem;
+        flex-shrink: 0;
+        width: 13.5rem;
         aspect-ratio: 1 / 1;
 
         img {
@@ -312,5 +312,61 @@
 
         font-size: 2.2rem;
         font-weight: 700;
+    }
+}
+
+
+/* Tag-page card */
+
+.articles-loop--tag-page > ul > li {
+
+    &:first-child > .card {
+
+        & > .card__text {
+            padding: clamp(3.2rem, 2.629rem + 1.524vw, 4rem);
+        }
+
+        & > .card__text > h3 {
+            font-size: clamp(3rem, 2.286rem + 1.905vw, 4rem);
+        }
+
+        & > .card__text > div {
+            font-size: clamp(1.6rem, 1.171rem + 1.143vw, 2.2rem);
+        }
+
+        & > .card__text > div > ul {
+            margin-bottom: 0;
+        }
+
+    } 
+
+    &:nth-child(2) > .card, 
+    &:nth-child(3) > .card {
+        
+        & > .card__text {
+            padding: clamp(1.6rem, 0.886rem + 1.905vw, 2.6rem);
+        }
+
+        & > .card__text ul {
+            margin-bottom: 0;
+        }
+
+        & > .card__text div {
+            font-size: clamp(1.6rem, 1.457rem + 0.381vw, 1.8rem);
+        }
+
+        & > .card__text h3 {
+            font-size: 3rem;
+        }
+    }
+
+    &:not(:first-child, :nth-child(2), :nth-child(3)) > .card {
+        & > .card__image {
+            aspect-ratio: 1.55 / 1;
+        }
+
+        & > .card__text {
+            padding: clamp(1.4rem, 0.971rem + 1.143vw, 2rem) 1rem;
+        }
     }
 }
