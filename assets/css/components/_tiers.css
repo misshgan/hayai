@@ -1,6 +1,5 @@
 .tiers {
     margin-top: clamp(2rem, 1.43rem + 1.266vw, 3rem);
-    margin-bottom: clamp(7rem, 5.291rem + 3.797vw, 10rem);
     
     .wrapper {
         border-top: 1px solid var(--color-grey);
@@ -41,4 +40,12 @@
         column-gap: 2rem;
         row-gap: 3rem;
     }
+}
+
+.account > .tiers > .wrapper {
+    border-top: none;
+}
+
+.membership > .tiers {
+    margin-bottom: clamp(7rem, 5.291rem + 3.797vw, 10rem);
 }
