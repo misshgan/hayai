@@ -36,6 +36,15 @@ main {
     padding-bottom: clamp(7rem, 5.291rem + 3.797vw, 10rem);
 }
 
+.main.main--error {
+    height: 100vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 @media (print), (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
