@@ -1,5 +1,5 @@
 .footer {
-    padding: clamp(5rem, 3.861rem + 2.532vw, 7rem) 0;
+    padding: clamp(5rem, 3.861rem + 2.532vw, 7rem) 0 0;
     background-color: var(--color-grey-light);
 
     &__logo {
@@ -12,6 +12,13 @@
 
             object-fit: cover;
         }
+    }
+    
+    &__copy {
+        margin-top: clamp(2rem, 0.291rem + 3.797vw, 5rem);
+        text-align: center;
+        font-size: 1.8rem;
+        padding-bottom: 2rem;
     }
 
     .site-name {
