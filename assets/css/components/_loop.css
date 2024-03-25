@@ -203,3 +203,24 @@
         margin-top: clamp(3rem, 2.43rem + 1.266vw, 4rem);
     }
 }
+
+
+/* Related articles loop */
+.articles-loop.articles-loop--related {
+
+    & > ul {
+        margin-top: 2.4rem;
+        gap: 2rem; 
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    & > ul > li:first-child {
+        grid-column: span 1;
+    }
+
+    & > ul > li {
+        background-color: var(--color-grey-light);
+    }
+}
