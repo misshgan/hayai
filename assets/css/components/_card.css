@@ -16,7 +16,7 @@
 .articles-loop--tag-page > ul > li:first-child > .card,
 .articles-loop--tag-page > ul > li:nth-child(2) > .card,
 .articles-loop--tag-page > ul > li:nth-child(3) > .card,
-.articles-loop--main-1 > ul > li:first-child > .card {
+.articles-loop--main-1:not(.articles-loop--related) > ul > li:first-child > .card {
     display: flex;
     flex-direction: column;
     position: relative;
