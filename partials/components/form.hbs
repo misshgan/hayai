@@ -1,10 +1,17 @@
 <form 
-    class="form"
+    class="form {{classes}}"
     data-members-form={{type}}
 >
+    {{#if is_account}}
+        <label>
+            <span>Your name</span>
+            <input data-members-name type="text" placeholder="Alice">
+        </label>
+    {{/if}}
+
     <label>
-        <span>Email</span>
-        <input type="email" required placeholder="Email">
+        <span>Your email</span>
+        <input data-members-email type="email" required placeholder="Email">
     </label>
 
     <button class="button">Subscribe {{> icons/loader}}</button>
@@ -13,4 +20,10 @@
         <p class="form__error-text" data-members-error></p>
         <p class="form__success-text">{{t 'The magic link was successfully sent!'}}</p>
     </div>
+
+    {{#if is_sign_up}}
+        <p>Already have an account? <a href="/sign-in">Sign in</a></p>
+    {{else if is_sign_in}}
+        <p>Don't have an account yet? <a href="/sign-up">Sign up</a></p>
+    {{/if}}
 </form>
