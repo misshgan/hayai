@@ -4,14 +4,11 @@
    –––––––––––––––––––––––––––––––––––––––––––––––––––– */ 
 
    /* Global wrapper */
-   --max-width-global-wrap: 1440px;
-
-   /* Post global wrapper */
-   --max-width-content-wrap: 1060px;
+   --max-width-global-wrap: 1920px;
 
    /* Post content wrapper */
-   --max-width-post-wrap-one: 820px;
-   --max-width-post-wrap-two: 600px;
+   --max-width-post-wrap-one: var(--global-post-hero-content-max-width);
+   --max-width-post-wrap-two: var(--global-post-hero-content-max-width);
 
    /* Grid gap */
    --grid-gap: 2.4vw;
@@ -30,15 +27,15 @@
    –––––––––––––––––––––––––––––––––––––––––––––––––––– */
 
    /* Headings, etc. */
-   --font-family-one: var(--font-default), var(--font-family-system);
+   --font-family-one: var(--font-body), var(--font-family-system);
    --font-weight-one-light: 300;
    --font-weight-one-bold: 700;
 
-   --font-family-two: var(--font-default), var(--font-family-system);
+   --font-family-two: var(--font-body), var(--font-family-system);
    --font-weight-two-bold: 700;
 
    /* Post content, alerts, etc. */  
-   --font-family-three: var(--font-default), var(--font-family-system);
+   --font-family-three: var(--font-body), var(--font-family-system);
    --font-weight-three-regular: 400;
    --font-weight-three-medium: 500;
    --font-weight-three-bold: 700;
@@ -52,9 +49,9 @@
    –––––––––––––––––––––––––––––––––––––––––––––––––––– */
 
    /* Fonts */
-   --color-font-one: var(--color-font-main);
+   --color-font-one: var(--font-color-main);
    --color-font-two: #fff;
-   --color-font-black: var(--color-font-main);
+   --color-font-black: var(--font-color-main);
    --color-font-white: #fff;
 
    /* Background & elements */
@@ -69,7 +66,7 @@
    --color-black: #080b12;
 
    /* Body */
-   --color-body: #fff;
+   --color-body: var(--color-white);
 
    /* Border */
    --color-border-one: #dfe2e6;
@@ -90,10 +87,11 @@
       -------------------------------------------------------------------------- */
 
 .post-content {
-    font-size: 2rem;
+    font-size: clamp(2rem, 1.886rem + 0.253vw, 2.2rem);
     max-width: var(--max-width-post-wrap-one);
     min-height: 1px;
-    margin: 5vh auto 15vh;
+    padding-top: clamp(5rem, 4.43rem + 1.266vw, 6rem);
+    margin: 0 auto 15vh;
 }
 
 /* Margin elements
@@ -169,6 +167,7 @@
     margin-top: 1em;
     margin-bottom: 18px;
     margin-left: -1px;
+    font-family: var(--font-body);
 }
 
 .post-content h4,
@@ -186,11 +185,13 @@
 }
 
 .post-content h2 {
-    font-size: 4.5rem;
+    font-size: clamp(3.6rem, 3.372rem + 0.506vw, 4rem);
+    font-weight: 700;
 }
 
 .post-content h3 {
-    font-size: 3.2rem;
+    font-size: clamp(3rem, 2.658rem + 0.759vw, 3.6rem);
+    font-weight: 700;
 }
 
 .post-content h4 {
@@ -432,7 +433,7 @@
 .post-content code {
     font-size: 85%;
     padding: 2px 5px;
-    background-color: var(--color-five);
+    background-color: var(--color-grey-light);
 }
 
 .post-content blockquote code {
@@ -507,7 +508,7 @@
 }
 
 .post-content .kg-callout-card {
-    border-radius: clamp(1rem, 0.43rem + 1.266vw, 2rem);
+    border-radius: 0;
     font-weight: 500;
 }
 
@@ -524,6 +525,10 @@
 
 .post-content .kg-audio-card svg {
     fill: var(--color-three);
+}
+
+.post-content .kg-audio-card {
+    padding: 0;
 }
 
 .post-content .kg-audio-card .kg-audio-playback-rate {
@@ -617,17 +622,21 @@
 
 .post-content .kg-bookmark-card .kg-bookmark-thumbnail {
     min-width: 24%;
-    margin: 10px;
+    margin: 0;
 }
 
 /* Toggle card */
 
 .post-content .kg-toggle-card {
-    border-radius: clamp(1rem, 0.43rem + 1.266vw, 2rem);
-    background-color: #F6F6F6;
-    border: none;
+    border-radius: 0;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-black);
     box-shadow: none;
     
+}
+
+.post-content .kg-toggle-heading svg {
+    color: var(--color-black)
 }
 
 .post-content .kg-toggle-card .kg-toggle-heading-text {
@@ -718,6 +727,7 @@
 
 .post-content .kg-bookmark-card .kg-bookmark-content {
     padding: clamp(2rem, 1.43rem + 1.266vw, 3rem);
+    background-color: var(--color-grey-light)
 }
 
 .post-content .kg-file-card .kg-file-card-container,
@@ -730,11 +740,14 @@
 .post-content .kg-audio-card,
 .post-content .kg-file-card .kg-file-card-container,
 .post-content .kg-product-card .kg-product-card-container,
-.post-content .kg-nft-card .kg-nft-card-container,
+.post-content .kg-nft-card .kg-nft-card-container {
+    border: 1px solid var(--color-grey-dark);
+    box-shadow: none;
+}
+
 .post-content .kg-bookmark-card .kg-bookmark-container,
 .post-content .kg-bookmark-card .kg-bookmark-container:hover {
-    border: var(--border) var(--color-border-one);
-    box-shadow: none;
+    border: none;
 }
 
 .post-content .kg-file-card .kg-file-card-container:hover,
