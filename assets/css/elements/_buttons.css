@@ -4,6 +4,7 @@
     font-weight: 500;
     line-height: normal;
     color: var(--color-brand-contrast);
+    display: block;
 
     padding: clamp(1.2rem, 1.086rem + 0.253vw, 1.4rem) 3.4rem;
     background-color: var(--ghost-accent-color);
