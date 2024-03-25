@@ -7,7 +7,8 @@
 {{/if}} --}}
 
 <section class="account">
-    {{#if @site.paid_members_enabled}}
+    <div class="wrapper">
+        {{#if @site.paid_members_enabled}}
         {{#if @member.paid}}
             {{> components/page-header 
                 title='Your account'
@@ -49,17 +50,18 @@
                             <span>{{date current_period_end format="DD MMM YYYY"}}</span></span>
                         </div>
                     </div>
-                </div>
-                <div class="subscription-info-buttons flex items-center content-center">
-                    {{#if @last}}
-                        <a class="button" href="javascript:" data-members-edit-billing>{{t 'Edit billing info'}}</a>
-                    {{/if}}
-                    {{cancel_link
-                        class='button button--transparent subscription-info__cancel-link'
-                        errorClass="cancel-error"
-                        cancelLabel="Cancel!"
-                        continueLabel="Continue!"
-                    }}
+
+                    <div class="subscription-info-buttons flex items-center content-center">
+                        {{#if @last}}
+                            <a class="button" href="javascript:" data-members-edit-billing>{{t 'Edit billing info'}}</a>
+                        {{/if}}
+                        {{cancel_link
+                            class='button button--minimal subscription-info__cancel-link'
+                            errorClass="cancel-error"
+                            cancelLabel="Cancel!"
+                            continueLabel="Continue!"
+                        }}
+                    </div>
                 </div>
             {{/foreach}}
         {{else}}
@@ -78,7 +80,8 @@
                 </div>
             </div>
         {{/if}}
-        {{^if @member.paid}}
-            {{> components/tiers}}
-        {{/if}}
+    </div>
+    {{^if @member.paid}}
+        {{> components/tiers}}
+    {{/if}}
 </section>
