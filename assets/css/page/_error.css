@@ -1,0 +1,18 @@
+.page-error {
+    h1 {
+        font-size: clamp(14rem, 10.582rem + 7.595vw, 20rem);
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    p {
+        
+
+        font-size: clamp(2rem, 1.772rem + 0.506vw, 2.4rem);
+        font-weight: 500;
+    }
+
+    .button {
+        margin-top: 3rem;
+    }
+}
