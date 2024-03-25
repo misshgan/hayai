@@ -1,0 +1,27 @@
+<header class="article-header">
+    <div class="wrapper">
+        <div class="article-header__text">
+            <div class="article-header__header flex items-center">
+                {{> components/tags limit='3'}}
+                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY | hA"}}</time>
+                {{#if reading_time}}
+                    <time>&nbsp;|&nbsp;{{reading_time minute="Only a minute" minutes="% min read"}}</time>
+                {{/if}}
+            </div>
+            <h1>{{title}}</h1>
+        </div>
+        {{#if feature_image}}
+            <figure class="article-header__background-image">
+                {{> components/image
+                    image_type='post'
+                    image_class='lazyload'
+                    image_url=feature_image
+                    size_m=true
+                    size_l=true
+                    size_xl=true
+                    loading='lazy'
+                }}
+            </figure>
+        {{/if}}
+    </div>
+</header>
