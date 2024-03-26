@@ -62,6 +62,12 @@
         padding-bottom: clamp(1.6rem, 1.372rem + 0.506vw, 2rem);
         border-bottom: 1px solid var(--color-grey);
     }
+
+    & > ul + .button {
+        text-align: center;
+        width: 100%;
+        margin-top: clamp(2.4rem, 2.058rem + 0.759vw, 3rem);
+    }
 }
 
 /* Main 1 articles loop */
