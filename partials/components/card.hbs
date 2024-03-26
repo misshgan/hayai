@@ -72,7 +72,7 @@
 		<a class="button" title="Subscribe now" href="javascript:" data-portal="signup/{{id}}/yearly" data-yearly>{{t "Subscribe now"}}</a>
     </article>
 {{else}}
-    <article class="card {{classes}}">
+    <article class="card {{classes}} {{^if feature_image}}card--no-feature{{/if}}">
         {{#if is_image}}
             {{#if feature_image}}
                 <figure class="card__image">
