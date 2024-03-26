@@ -9,6 +9,9 @@
                 {{/if}}
             </div>
             <h1>{{title}}</h1>
+            {{#if primary_author}}
+                <span class="article-header__author">Written by {{primary_author.name}}</span>
+            {{/if}}
         </div>
         {{#if feature_image}}
             <figure class="article-header__background-image">
