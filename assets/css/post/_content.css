@@ -94,6 +94,12 @@
     margin: 0 auto 15vh;
 }
 
+.post-content.post-content--no-access {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 /* Margin elements
       –––––––––––––––––––––––––––––––––––––––––––––––––––– */
 .post-content h1:first-child,
