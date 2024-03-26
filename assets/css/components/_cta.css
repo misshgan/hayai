@@ -66,3 +66,24 @@
 .cta.cta--home {
     margin-top: 0;
 }
+
+
+
+/* Preview CTA */
+
+.cta.cta--preview {
+    margin-top: 0;
+
+    .button {
+        color: var(--color-brand-contrast);
+        margin-bottom: 1rem;
+    }
+
+    .button:hover {
+        color: var(--ghost-accent-color)
+    }
+
+    .button + small {
+        color: var(--color-white)
+    }
+}
