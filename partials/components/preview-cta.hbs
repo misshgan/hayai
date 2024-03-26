@@ -1,0 +1,40 @@
+<article class="cta cta--preview flex flex-col items-center {{classes}}">
+    {{^if is_footer}}
+        <h2 class="cta__title">
+            {{t "Become a member to see the rest"}}
+        </h2>
+    {{/if}}
+    {{#if @member}}
+        <p class="cta__subtitle">{{t "You’ve landed on a piece of content that’s exclusive to the paid members. Upgrade your account to get access to the post. 👇"}}</p>
+        <a href="/membership" class="button">{{t "See plans"}}</a>
+	{{else}}
+        <p class="cta__subtitle">{{t "You’ve landed on a piece of content that’s exclusive to members. Not yet a member? Sign up for free 👇"}}</p>
+        <a class="button" href="/sign-up/">{{t "Sign up now"}}</a>
+        <small><span>{{t "Already have an account?"}}</span> <a href="/sign-in/">{{t "Sign in"}}</a></small>
+	{{/if}}
+
+    {{!-- {{> components/form type='subscribe' classes='form--cta'}} --}}
+
+    {{#if @custom.cta_background_image}}
+        <style>
+            .cta:not(.cta--footer) {
+                background-image: url({{@custom.cta_background_image}});
+            }
+            .cta:not(.cta--footer) .cta__title,
+            .cta:not(.cta--footer) .cta__subtitle {
+                color: var(--color-white)
+            }
+            .cta:not(.cta--footer):after {
+                position: absolute;
+                content: '';
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+                background-color: var(--color-black);
+                filter: opacity(0.4);
+            }
+        </style>
+    {{/if}}
+</article>
