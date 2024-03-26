@@ -61,3 +61,14 @@
         height: 80vh;
     }
 }
+
+.article-header.article-header--no-feature {
+    .wrapper {
+        height: max-content;
+    }
+
+    .article-header__header,
+    .article-header__text {
+        color: var(--color-black)
+    }
+}
