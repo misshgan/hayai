@@ -6,21 +6,23 @@
         <div class="home-side flex flex-col">
 
             {{> components/loop 
-                filter='' 
-                limit='3' 
+                filter='tag:{{@custom.first_sidebar_list_slug}}' 
+                limit='10' 
                 is_articles=true 
                 classes='articles-loop--sidebar' 
                 article_classes='card--sidebar'
-                title="News feed"
+                slug=@custom.first_sidebar_list_slug
+                title=@custom.first_sidebar_list_slug
             }}
 
             {{> components/loop 
-                filter='' 
-                limit='3' 
+                filter='tag:{{@custom.second_sidebar_list_slug}}' 
+                limit='10' 
                 is_articles=true 
                 classes='articles-loop--sidebar' 
                 article_classes='card--sidebar'
-                title="Other"
+                slug=@custom.second_sidebar_list_slug
+                title=@custom.first_sidebar_list_slug
             }}
 
         </div>
@@ -32,7 +34,7 @@
             }}
 
             {{> components/loop 
-                filter='' 
+                filter='tag:{{@custom.first_homepage_list_slug}}' 
                 limit='5' 
                 is_articles=true 
                 with_images=true 
@@ -40,10 +42,11 @@
                 with_first_featured_post=true
                 classes='articles-loop--main-1' 
                 article_classes='card--main-1'
-                title='Climate'
+                slug=@custom.first_homepage_list_slug
+                title=@custom.first_homepage_list_slug
             }}
 
-            {{#get "posts" include='tags' filter='tag:hash-horizontal-selected' limit='1'}}
+            {{#get "posts" include='tags' filter='tag:{{@custom.one_selected_homepage_article_slug}}' limit='1'}}
                 {{#if posts}}
                     {{#foreach posts}}
                         {{> components/card
@@ -54,7 +57,7 @@
             {{/get}}
 
             {{> components/loop 
-                filter='' 
+                filter='tag:{{@custom.second_homepage_list_slug}}' 
                 limit='3' 
                 is_articles=true 
                 with_images=true 
@@ -62,24 +65,25 @@
                 with_custom_excerpt=true
                 classes='articles-loop--main-2' 
                 article_classes='card--main-2'
-                title='Politics'
+                slug=@custom.second_homepage_list_slug
+                title=@custom.second_homepage_list_slug
             }}
 
-            {{> components/cta}}
+            {{> components/cta classes='cta--home'}}
 
             {{> components/loop 
-                filter='' 
+                filter='tag:{{@custom.second_homepage_list_slug}}' 
                 limit='4' 
                 is_articles=true 
                 with_images=true 
                 with_link_to_more=true
                 classes='articles-loop--main-3' 
                 article_classes='card--main-3'
-                title='Economics'
+                slug=@custom.second_homepage_list_slug
+                title=@custom.second_homepage_list_slug
             }}
 
         </div>
 
     </div>
 </div>
-
