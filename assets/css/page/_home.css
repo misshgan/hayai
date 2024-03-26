@@ -1,5 +1,4 @@
 .home {
-    padding: 0 0 clamp(7rem, 5.291rem + 3.797vw, 10rem);
 
     .container {
         display: flex;
