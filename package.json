@@ -82,6 +82,42 @@
             "home_page_main_title": {
                 "type": "text",
                 "group": "homepage"
+            },
+            "cta_title": {
+                "type": "text",
+                "group": "cta"
+            },
+            "cta_subtitle": {
+                "type": "text",
+                "group": "cta"
+            },
+            "cta_background_image": {
+                "type": "image",
+                "group": "cta"
+            },
+            "first_sidebar_list_slug": {
+                "type": "text",
+                "group": "homepage"
+            },
+            "second_sidebar_list_slug": {
+                "type": "text",
+                "group": "homepage"
+            },
+            "first_homepage_list_slug": {
+                "type": "text",
+                "group": "homepage"
+            },
+            "one_selected_homepage_article_slug": {
+                "type": "text",
+                "group": "homepage"
+            },
+            "second_homepage_list_slug": {
+                "type": "text",
+                "group": "homepage"
+            },
+            "third_homepage_list_slug": {
+                "type": "text",
+                "group": "homepage"
             }
         }
     },
