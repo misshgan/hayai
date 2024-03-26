@@ -22,7 +22,11 @@
             font-family: var(--font-body);
             font-size: clamp(4.4rem, 4.286rem + 0.253vw, 4.6rem);
             font-weight: 700;
-            margin-top: clamp(1rem, 0.658rem + 0.759vw, 1.6rem);
+            margin: clamp(1rem, 0.658rem + 0.759vw, 1.6rem) 0;
+        }
+
+        span {
+            font-size: 1.8rem;
         }
 
     }
