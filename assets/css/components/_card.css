@@ -13,10 +13,10 @@
 /* Big card with the feature image in the background */
 
 .card.card--has-image-on-background,
-.articles-loop--tag-page > ul > li:first-child > .card,
-.articles-loop--tag-page > ul > li:nth-child(2) > .card,
-.articles-loop--tag-page > ul > li:nth-child(3) > .card,
-.articles-loop--main-1:not(.articles-loop--related) > ul > li:first-child > .card {
+.articles-loop--tag-page > ul > li:first-child > .card:not(.card--no-feature),
+.articles-loop--tag-page > ul > li:nth-child(2) > .card:not(.card--no-feature),
+.articles-loop--tag-page > ul > li:nth-child(3) > .card:not(.card--no-feature),
+.articles-loop--main-1:not(.articles-loop--related) > ul > li:first-child > .card:not(.card--no-feature) {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -87,7 +87,7 @@
     }
 }
 
-.articles-loop--tag-page > ul > li:first-child > .card {
+.articles-loop--tag-page > ul > li:first-child > .card:not(.card--no-feature) {
     aspect-ratio: 2.04 / 1
 }
 
