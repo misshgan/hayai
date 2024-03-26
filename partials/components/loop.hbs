@@ -27,53 +27,55 @@
         {{/get}}
     </section>
 {{else if is_articles}}
-    <section class="articles-loop {{classes}} flex flex-col">
-        <div class="articles-loop__header">
-            {{#if title}}
-                <h2>{{title}}</h2>
-            {{/if}}
+{{#get "posts" include='tags,authors' limit=limit filter=filter as |articles|}}
+    {{#if articles}}
+        <section class="articles-loop {{../classes}} flex flex-col">
+            <div class="articles-loop__header">
+                {{#if ../title}}
+                    <h2>{{../title}}</h2>
+                {{/if}}
 
-            {{#if with_link_to_more}}
-                <a href="/" class="articles-loop__read-more flex items-center">Read more {{> icons/arrow-right}}</a>
-            {{/if}}
+                {{#if ../with_link_to_more}}
+                    <a href="{{@site.url}}/tag/{{../slug}}" class="articles-loop__read-more flex items-center">Read more {{> icons/arrow-right}}</a>
+                {{/if}}
 
-            {{#if with_articles_counter}}
-                {{plural pagination.total empty='posts' singular='% post' plural='% posts'}}
-            {{/if}}
-        </div>
-
-        {{#get "posts" include='tags,authors' limit=limit filter=filter as |articles|}}
-            {{#if articles}}
-                <ul>
-                {{#foreach articles}}
-                    <li>
-                        {{#has number="1"}}
-                            {{> components/card
-                                is_image=../../with_images
-                                is_custom_excerpt=../../with_custom_excerpt
-                                classes=../../article_classes
-                            }}
-                        {{else has number='2,3'}}
-                            {{> components/card
-                                is_image=../../with_images
-                                is_custom_excerpt=../../with_custom_excerpt
-                                classes=../../article_classes
-                            }}
-                        {{else}}
-                            {{> components/card
-                                is_image=../../with_images
-                                is_custom_excerpt=../../with_custom_excerpt
-                                classes=../../article_classes
-                            }}
-                        {{/has}}
-                    </li>
-                {{/foreach}}
-                </ul>
-            {{/if}}
-        {{/get}}
-
-
-    </section>
+                {{#if ../with_articles_counter}}
+                    {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+                {{/if}}
+            </div>
+            <ul>
+            {{#foreach articles}}
+                <li>
+                    {{#has number="1"}}
+                        {{> components/card
+                            is_image=../../with_images
+                            is_custom_excerpt=../../with_custom_excerpt
+                            classes=../../article_classes
+                        }}
+                    {{else has number='2,3'}}
+                        {{> components/card
+                            is_image=../../with_images
+                            is_custom_excerpt=../../with_custom_excerpt
+                            classes=../../article_classes
+                        }}
+                    {{else}}
+                        {{> components/card
+                            is_image=../../with_images
+                            is_custom_excerpt=../../with_custom_excerpt
+                            classes=../../article_classes
+                        }}
+                    {{/has}}
+                </li>
+            {{/foreach}}
+            </ul>
+            {{#match ../classes "=" 'articles-loop--sidebar'}}
+                {{#if ../slug}}
+                    <a href="{{@site.url}}/tag/{{../slug}}" class="button">Read more</a>
+                {{/if}}
+            {{/match}}
+        </section>
+    {{/if}}
+{{/get}}
 {{else if is_tags}}
     {{#get "tags" limit='all'}}
         {{#if tags}}
