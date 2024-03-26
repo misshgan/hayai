@@ -53,7 +53,6 @@
         margin-top: auto;
 
         h3 {
-            margin-top: 1.6rem;
 
             color: var(--color-white);
             font-style: normal;
@@ -167,6 +166,10 @@
         font-weight: 400;
     }
 }
+
+/* .articles-loop--main-1 .card__text .card__header ul {
+    margin-bottom: clamp(1rem, 0.886rem + 0.253vw, 1.2rem);
+} */
 
 /* Card main 2 */
 
@@ -335,7 +338,7 @@
         }
 
         & > .card__text > div > ul {
-            margin-bottom: 0;
+            margin-bottom: 1.8rem;
         }
 
     } 
@@ -357,6 +360,10 @@
 
         & > .card__text h3 {
             font-size: 3rem;
+        }
+
+        & > .card__text > div > ul {
+            margin-bottom: 1.6rem;
         }
     }
 
