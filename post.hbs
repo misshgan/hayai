@@ -10,26 +10,35 @@
 
         <div id="post-content" class="post-content">
             {{#if access}}
-            {{content}}
+                {{content}}
             {{else}}
-            {{#if html}}
-            <div class="members-cta-teaser">
-                {{{html}}}
-            </div>
-            {{/if}}
-            {{>members/cta}}
+                {{#if html}}
+                <div class="members-cta-teaser">
+                    {{{html}}}
+                </div>
+                {{/if}}
+
+                {{> components/preview-cta}}
+
+                <style>
+                    main.main {
+                        padding-bottom: 0;
+                    }
+                </style>
             {{/if}}
         </div>
 
-        {{> components/loop 
-            filter='id:-{{id}}+tag:{{primary_tag.slug}}' 
-            limit='4' 
-            is_articles=true 
-            with_images=true 
-            classes='articles-loop--main-1 articles-loop--related' 
-            article_classes='card--main-1 card--related'
-            title='Read more'
-        }}
+        {{#if access}}
+            {{> components/loop 
+                filter='id:-{{id}}+tag:{{primary_tag.slug}}' 
+                limit='4' 
+                is_articles=true 
+                with_images=true 
+                classes='articles-loop--main-1 articles-loop--related' 
+                article_classes='card--main-1 card--related'
+                title='Read more'
+            }}
+        {{/if}}
     </div>
 </article>
 
