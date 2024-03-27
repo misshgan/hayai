@@ -1,17 +1,45 @@
 .home {
-
     .container {
         display: flex;
         justify-content: space-between;
+
+        @media (max-width: 1024px) {
+            flex-direction: column-reverse;
+            row-gap: 5rem;
+        }
     }
 
     .home-side {
         width: 24%;
         row-gap: 5rem;
+
+        & section {
+            @media (max-width: 1024px) {
+                max-width: 50%;
+            }
+
+            @media (max-width:768px) {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            width: 100%;
+            flex-direction: row;
+            column-gap: 5rem;
+        }
+
+        @media (max-width:768px) {
+            flex-direction: column;
+        }
     }
 
     .home-main {
         width: 70%;
         row-gap: 5rem;
+
+        @media (max-width: 1024px) {
+            width: 100%;
+        }
     }
 }
