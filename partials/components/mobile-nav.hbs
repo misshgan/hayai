@@ -1,0 +1,30 @@
+<div class="js-mobile-nav mobile-nav flex flex-col items-center content-center">
+    <div class="mobile-nav-wrapper flex flex-col items-center">
+        {{#if @site.logo}}
+            {{> components/image
+                image_type='site'
+                picture_class='mobile-nav__logo'
+                image_url=@site.logo
+                size_xs=true
+                size_s=true
+                loading='eager'
+            }}
+        {{else}}
+            <span class="site-name mobile-nav__logo">{{@site.title}}</span>
+        {{/if}}
+
+        {{> icons/close classes='mobile-nav__close'}}
+
+        {{navigation is_header=false classes='navigation--is-mobile flex flex-col'}}
+
+        <div class="flex items-center">
+            {{^if @member}}
+                <a href="/sign-in" class="button button--minimal">{{t 'Sign in'}}</a>
+                <a href="/sign-up" class="button">{{t 'Subscribe'}}</a> 
+            {{else}}
+                <a href="/account" class="button button--minimal">{{t 'Account'}}</a>
+                <a href="javascript:" class="button button--minimal" data-members-signout>{{t 'Sign out'}}</a>
+            {{/if}}
+        </div>
+    </div>
+</div>
