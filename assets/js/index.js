@@ -47,3 +47,27 @@ handleRemoveDash();
 const homeHeroSwiper = document.getElementById('home-hero-swiper');
 
 if (homeHeroSwiper) handleHomeHeroSwiper();
+
+
+/* Handle mobile nav */
+
+function handleMobileNav() {
+    const target = document.querySelector('.js-mobile-menu-target');
+    const mobileNav = document.querySelector('.js-mobile-nav');
+
+    if (!target || !mobileNav) { return; }
+
+    const close = mobileNav.querySelector('.mobile-nav__close');
+
+    target.addEventListener('click', () => {
+        mobileNav.classList.toggle('active');
+        document.body.classList.toggle('no-scroll')
+    })
+
+    close.addEventListener('click', () => {
+        mobileNav.classList.toggle('active');
+        document.body.classList.toggle('no-scroll')
+    })
+}
+
+handleMobileNav();
