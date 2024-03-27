@@ -28,6 +28,21 @@ function handleHeaderDropdown() {
 
 handleHeaderDropdown();
 
+
+/* Remove '-' from the list title */
+
+function handleRemoveDash() {
+    const titles = document.querySelectorAll('.articles-loop--sidebar h2');
+
+    if (!titles) { return; }
+
+    titles.forEach(title => {
+        title.innerText = title.innerText.replace('-', ' ')
+    })
+}
+
+handleRemoveDash();
+
 // Check if elements exist before invoking related functions
 const homeHeroSwiper = document.getElementById('home-hero-swiper');
 
