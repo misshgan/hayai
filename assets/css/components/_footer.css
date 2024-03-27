@@ -32,5 +32,7 @@
     &__main {
         margin-top: clamp(3rem, 1.861rem + 2.532vw, 5rem);
         column-gap: 10rem;
+        flex-wrap: wrap;
+        row-gap: 5rem;
     }
 }
