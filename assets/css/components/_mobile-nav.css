@@ -1,0 +1,66 @@
+.mobile-nav {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    &:not(.active) {
+        display: none;
+        visibility: hidden;
+    }
+
+    .navigation {
+        margin-bottom: 4rem;
+    }
+    
+    .navigation + div {
+        column-gap: 1.4rem
+    }
+
+    .mobile-nav-wrapper {
+        background-color: var(--color-white);
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        overflow-y: auto;
+        
+        padding-top: 20vh;
+        padding-bottom: 20vh;
+
+        position: relative;
+    }
+
+    &.active .mobile-nav-wrapper {
+        animation: fadeInUp .35s;
+    }
+
+    &__close {
+        position: absolute;
+        top: 3rem;
+        right: 4rem;
+        width: 3rem;
+        height: 3rem;
+
+        fill: var(--color-black);
+        cursor: pointer;
+
+        @media (max-width:600px) {
+            right: 2rem;
+        }
+    }
+
+    &__logo {
+        position: absolute;
+        top: 2rem;
+        left: 4rem;
+        height: 5rem;
+        width: auto;
+
+        @media (max-width:600px) {
+            left: 2rem;
+        }
+    }
+}
