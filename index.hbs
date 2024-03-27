@@ -69,7 +69,9 @@
                 title=@custom.second_homepage_list_slug
             }}
 
-            {{> components/cta classes='cta--home'}}
+            {{^if @member}}
+                {{> components/cta classes='cta--home'}}
+            {{/if}}
 
             {{> components/loop 
                 filter='tag:{{@custom.second_homepage_list_slug}}' 

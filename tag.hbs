@@ -22,6 +22,8 @@
 
         {{/tag}}
 
-        {{> components/cta}}
+        {{#if @member}}
+            {{> components/cta}}
+        {{/if}}
     </div>
 </section>

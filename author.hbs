@@ -20,6 +20,8 @@
     </div>
 </section>
 
-<div class="wrapper">
-    {{> components/cta}}
-</div>
+{{^if @member}}
+    <div class="wrapper">
+        {{> components/cta}}
+    </div>
+{{/if}}
