@@ -6,6 +6,8 @@
 
         {{> components/loop is_tags=true}}
 
-        {{> components/cta}}
+        {{^if @member}}
+            {{> components/cta}}
+        {{/if}}
     </div>
 </section>
