@@ -16,13 +16,29 @@
                 {{/if}}
             </a>
 
-            {{> components/cta is_footer=true classes='cta--footer'}}
+            {{^if @member}}
+                {{> components/cta is_footer=true classes='cta--footer'}}
+            {{/if}}
         </div>
         <div class="footer__main flex">
-            {{> navigation classes='navigation--is-footer' is_header=false}}
-            {{#if @site.secondary_navigation}}
-                {{navigation type='secondary' classes='navigation--is-footer' is_header=false}}
-            {{/if}}
+            {{#match @site.navigation.length '>' 0}}
+                {{> navigation classes='navigation--is-footer' is_header=false from='1' to='5'}}
+            {{/match}}
+            {{#match @site.navigation.length '>' 5}}
+                {{> navigation classes='navigation--is-footer' is_header=false from='6' to='10'}}
+            {{/match}}
+            {{#match @site.navigation.length ">" 10}}
+                {{> navigation classes='navigation--is-footer' is_header=false from='11' to='15'}}
+            {{/match}}
+            {{#match @site.secondary_navigation.length '>' 0}}
+                {{navigation type='secondary' classes='navigation--is-footer' is_header=false from='1' to='5'}}
+            {{/match}}
+            {{#match @site.secondary_navigation.length '>' 5}}
+                {{navigation type='secondary' classes='navigation--is-footer' is_header=false from='6' to='10'}}
+            {{/match}}
+            {{#match @site.secondary_navigation.length '>' 10}}
+                {{navigation type='secondary' classes='navigation--is-footer' is_header=false from='11' to='15'}}
+            {{/match}}
         </div>
         <div class="footer__copy">{{@site.title}} &copy; 2024</div>
     </div>
