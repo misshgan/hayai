@@ -3,10 +3,12 @@
     data-members-form={{type}}
 >
     {{#if is_account}}
-        <label>
-            <span>Your name</span>
-            <input data-members-name type="text" placeholder="Alice">
-        </label>
+        {{^if is_sign_in}}
+            <label>
+                <span>Your name</span>
+                <input data-members-name type="text" placeholder="Alice">
+            </label>
+        {{/if}}
     {{/if}}
 
     <label>
@@ -14,7 +16,7 @@
         <input data-members-email type="email" required placeholder="Email">
     </label>
 
-    <button class="button">Subscribe {{> icons/loader}}</button>
+    <button class="button">{{#if is_sign_in}}Sign in{{else}}Subscribe{{/if}}{{> icons/loader}}</button>
 
     <div class="form__notification flex flex-col">
         <p class="form__error-text" data-members-error></p>
