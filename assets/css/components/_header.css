@@ -5,6 +5,26 @@
     }
     &__buttons {
         column-gap: 2.4rem;
+
+        .desktop-buttons {
+            column-gap: 2.4rem;
+
+            @media (max-width:1024px) {
+                display: none;
+                visibility: hidden;
+            }
+        }
+
+        .js-mobile-menu-target {
+            display: none;
+            visibility: hidden;
+            cursor: pointer;
+
+            @media (max-width:1024px) {
+                display: block;
+                visibility: visible;
+            }
+        }
     }
 
     img {
