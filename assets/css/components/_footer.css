@@ -4,7 +4,7 @@
 
     &__logo {
         display: block;
-        max-width: 24rem;
+        max-width: 18rem;
 
         img {
             width: 100%;
@@ -13,9 +13,18 @@
             object-fit: cover;
         }
     }
+
+    &__header {
+        column-gap: 4rem;
+        row-gap: 2rem;
+
+        @media (max-width:600px) {
+            flex-direction: column;
+        }
+    }
     
     &__copy {
-        margin-top: clamp(2rem, 0.291rem + 3.797vw, 5rem);
+        margin-top: clamp(4rem, 3.43rem + 1.266vw, 5rem);
         text-align: center;
         font-size: 1.8rem;
         padding-bottom: 2rem;
@@ -34,5 +43,9 @@
         column-gap: 10rem;
         flex-wrap: wrap;
         row-gap: 5rem;
+
+        @media (max-width:768px) {
+            column-gap: 7rem;
+        }
     }
 }
