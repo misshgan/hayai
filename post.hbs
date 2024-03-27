@@ -4,9 +4,7 @@
 
 <article class="article">
     <div class="wrapper">
-        {{#if @page.show_title_and_feature_image}}
-            {{> components/post/header}}
-        {{/if}}
+        {{> components/post/header}}
 
         <div id="post-content" class="post-content">
             {{#if access}}
