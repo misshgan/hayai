@@ -167,9 +167,10 @@
     }
 }
 
-/* .articles-loop--main-1 .card__text .card__header ul {
-    margin-bottom: clamp(1rem, 0.886rem + 0.253vw, 1.2rem);
-} */
+.articles-loop--main-1 > ul > li:first-child > .card h3 {
+    font-weight: 700;
+    font-size: clamp(2.6rem, 2.372rem + 0.506vw, 3rem);
+}
 
 /* Card main 2 */
 
