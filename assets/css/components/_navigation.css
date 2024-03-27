@@ -79,3 +79,8 @@
 
 
 /* Navigation mobile */
+
+.navigation.navigation--is-mobile {
+    text-align: center;
+    row-gap: 1.6rem;
+}
