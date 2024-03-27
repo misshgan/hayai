@@ -145,6 +145,7 @@
 
     .button {
         width: 100%;
+        border: 1px solid var(--ghost-accent-color)
     }
 
     & > p {
