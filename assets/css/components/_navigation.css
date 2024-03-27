@@ -36,7 +36,7 @@
 
 .navigation-dropdown ul {  
     display: none;
-    row-gap: 1rem;
+    row-gap: 1.4rem;
 
     list-style-type: none;
     padding: 0;
