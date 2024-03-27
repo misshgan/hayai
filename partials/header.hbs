@@ -21,13 +21,16 @@
             
         <nav class="header__buttons flex items-center">
             {{search}}
-            {{^if @member}}
-                <a href="/sign-in" class="button button--minimal">{{t 'Sign in'}}</a>
-                <a href="/sign-up" class="button">{{t 'Subscribe'}}</a> 
-            {{else}}
-                <a href="/account" class="button button--minimal">{{t 'Account'}}</a>
-                <a href="javascript:" class="button button--minimal" data-members-signout>{{t 'Sign out'}}</a>
-            {{/if}}
+            <div class="desktop-buttons flex items-center">
+                {{^if @member}}
+                    <a href="/sign-in" class="button button--minimal">{{t 'Sign in'}}</a>
+                    <a href="/sign-up" class="button">{{t 'Subscribe'}}</a> 
+                {{else}}
+                    <a href="/account" class="button button--minimal">{{t 'Account'}}</a>
+                    <a href="javascript:" class="button button--minimal" data-members-signout>{{t 'Sign out'}}</a>
+                {{/if}}
+            </div>
+            {{> icons/menu classes='js-mobile-menu-target'}}
         </nav>
     </div>
 </header>
