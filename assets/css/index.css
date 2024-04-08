@@ -30,7 +30,6 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import 'elements/_links';
 @import 'elements/_buttons';
 @import 'elements/_text';
-@import 'elements/_form';
 
 /* Default components */
 @import 'default/_errors';

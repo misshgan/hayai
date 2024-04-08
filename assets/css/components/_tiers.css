@@ -39,6 +39,14 @@
         grid-template-columns: repeat(3, 1fr);
         column-gap: 2rem;
         row-gap: 3rem;
+
+        @media (max-width:1024px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width:768px) {
+            grid-template-columns: 1fr;
+        }
     }
 }
 
@@ -46,6 +54,6 @@
     border-top: none;
 }
 
-.membership > .tiers {
+/* .membership > .tiers {
     margin-bottom: clamp(7rem, 5.291rem + 3.797vw, 10rem);
-}
+} */

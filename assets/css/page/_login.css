@@ -8,6 +8,10 @@
     max-width: 107rem;
     margin: 0 auto;
 
+    @media (max-width:1024px) {
+        align-items: center;
+    }
+
     .wrapper {
         max-width: 44rem;
         margin: 0;

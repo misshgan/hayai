@@ -91,7 +91,12 @@
     max-width: var(--max-width-post-wrap-one);
     min-height: 1px;
     padding-top: clamp(5rem, 4.43rem + 1.266vw, 6rem);
-    margin: 0 auto 15vh;
+    margin: 0 auto 10vh;
+}
+
+.post-content + #ghost-comments-root {
+    max-width: var(--max-width-post-wrap-one);
+    margin: 0 auto 5vh;
 }
 
 .post-content.post-content--no-access {

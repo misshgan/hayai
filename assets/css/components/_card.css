@@ -91,11 +91,31 @@
 
 .articles-loop--tag-page > ul > li:first-child > .card:not(.card--no-feature) {
     aspect-ratio: 2.04 / 1;
+
+    @media (max-width:600px) {
+        aspect-ratio: 1 / 1.2;
+    }
+
+    @media (max-width:450px) {
+        aspect-ratio: 1 / 1.3;
+    }
 }
 
 .articles-loop--tag-page > ul > li:nth-child(2) > .card,
 .articles-loop--tag-page > ul > li:nth-child(3) > .card {
     aspect-ratio: 1.49 / 1;
+
+    @media (max-width:768px) {
+        aspect-ratio: 2.04 / 1;
+    }
+
+    @media (max-width:600px) {
+        aspect-ratio: 1 / 1.2;
+    }
+
+    @media (max-width:450px) {
+        aspect-ratio: 1 / 1.3;
+    }
 }
 
 /* Sidebar article card */
@@ -415,7 +435,7 @@
 .articles-loop--tag-page > ul > li {
     &:first-child > .card {
         & > .card__text {
-            padding: clamp(3.2rem, 2.744rem + 1.013vw, 4rem);
+            padding: clamp(1.6rem, 0.233rem + 3.038vw, 4rem);
         }
 
         & > .card__text > h3 {
@@ -433,6 +453,7 @@
 
     &:nth-child(2) > .card,
     &:nth-child(3) > .card {
+
         & > .card__text {
             padding: clamp(1.6rem, 1.03rem + 1.266vw, 2.6rem);
         }
@@ -471,6 +492,11 @@
     padding: clamp(2rem, 1.43rem + 1.266vw, 3rem)
         clamp(1.6rem, 1.03rem + 1.266vw, 2.6rem);
     background-color: var(--color-grey-light);
+    
+    @media (max-width:768px) {
+        width: min(40rem, 100%);
+        margin: 0 auto;
+    }
 
     h2 {
         font-size: 2.2rem;
@@ -534,6 +560,10 @@
     .card__image {
         width: 24.4%;
         aspect-ratio: 1 /1;
+
+        @media (max-width:768px) {
+            display: none;
+        }
     }
 
     .card__header {
