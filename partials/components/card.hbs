@@ -51,7 +51,7 @@
     <article class="card tier tier--paid flex flex-col">
          <header>
             <h2 class="tier__title">{{name}}</h2>
-            <h3 class="tier__price" data-monthly>{{#if monthly_price}}<span>{{price currency=currency}}</span>{{price monthly_price}}<span>{{t "/mo"}}</span>{{else}}<span>$</span>0<span>{{t "/mo"}}</span>{{/if}}</h3>
+            <h3 class="tier__price" data-monthly>{{#if monthly_price}}<span>{{price currency=currency}}</span>{{price monthly_price}}<span>{{t "/m"}}</span>{{else}}<span>$</span>0<span>{{t "/mo"}}</span>{{/if}}</h3>
 			<h3 class="tier__price" data-yearly>{{#if yearly_price}}<span>{{price currency=currency}}</span>{{price yearly_price}}<span>{{t "/y"}}</span>{{else}}<span>$</span>0<span>{{t "/y"}}</span>{{/if}}</h3>
         </header>
         <div class="tier__content">
