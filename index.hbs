@@ -46,15 +46,17 @@
                 title=@custom.first_homepage_list_slug
             }}
 
-            {{#get "posts" include='tags' filter='tag:{{@custom.one_selected_homepage_article_slug}}' limit='1'}}
-                {{#if posts}}
-                    {{#foreach posts}}
-                        {{> components/card
-                            classes='card--horizontal-selected'
-                        }}
-                    {{/foreach}}
-                {{/if}}
-            {{/get}}
+            {{#if @custom.one_selected_homepage_article_slug}}
+                {{#get "posts" include='tags' filter='tag:{{@custom.one_selected_homepage_article_slug}}' limit='1'}}
+                    {{#if posts}}
+                        {{#foreach posts}}
+                            {{> components/card
+                                classes='card--horizontal-selected'
+                            }}
+                        {{/foreach}}
+                    {{/if}}
+                {{/get}}
+            {{/if}}
 
             {{> components/loop 
                 filter='tag:{{@custom.second_homepage_list_slug}}' 
@@ -74,15 +76,15 @@
             {{/if}}
 
             {{> components/loop 
-                filter='tag:{{@custom.second_homepage_list_slug}}' 
+                filter='tag:{{@custom.third_homepage_list_slug}}' 
                 limit='4' 
                 is_articles=true 
                 with_images=true 
                 with_link_to_more=true
                 classes='articles-loop--main-3' 
                 article_classes='card--main-3'
-                slug=@custom.second_homepage_list_slug
-                title=@custom.second_homepage_list_slug
+                slug=@custom.third_homepage_list_slug
+                title=@custom.third_homepage_list_slug
             }}
 
         </div>
