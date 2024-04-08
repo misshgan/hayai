@@ -3,10 +3,12 @@
         <div class="article-header__text">
             <div class="article-header__header flex items-center">
                 {{> components/tags limit='3'}}
-                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY | hA"}}</time>
-                {{#if reading_time}}
-                    <time>&nbsp;|&nbsp;{{reading_time minute="Only a minute" minutes="% min read"}}</time>
-                {{/if}}
+                <div>
+                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY | hA"}}</time>
+                    {{#if reading_time}}
+                        <time>&nbsp;|&nbsp;{{reading_time minute="Only a minute" minutes="% min read"}}</time>
+                    {{/if}}
+                </div>
             </div>
             <h1>{{title}}</h1>
             {{#if primary_author}}
