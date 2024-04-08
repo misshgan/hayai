@@ -29,7 +29,7 @@
 
     {{#if @member.paid}}    
             {{#foreach @member.subscriptions}}
-                <div class="subscription-info flex content-center {{#match @number ">" 1}}subscription-info--additional{{/match}}">
+                <div class="subscription-info flex {{#match @number ">" 1}}subscription-info--additional{{/match}}">
                     <div class="subscription-info__column">
                         <div>
                             <label>{{t 'Email address:'}}</label>
@@ -65,7 +65,7 @@
                 </div>
             {{/foreach}}
         {{else}}
-            <div class="subscription-info flex content-center">
+            <div class="subscription-info flex">
                 <div class="subscription-info__column">
                     <div>
                         <label>{{t 'Email address:'}}</label>
