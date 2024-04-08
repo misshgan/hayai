@@ -27,6 +27,8 @@
         </div>
 
         {{#if access}}
+            {{comments}}
+
             {{> components/loop 
                 filter='id:-{{id}}+tag:{{primary_tag.slug}}' 
                 limit='4' 
